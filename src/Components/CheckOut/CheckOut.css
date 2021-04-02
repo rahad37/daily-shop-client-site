@@ -1,0 +1,39 @@
+.beauty button{
+    width: 200px;
+   font-size: 20px;
+   float: right;
+   margin-right: 10px;
+   margin-top: 50px;
+   color: white;
+   font-weight: 700;
+}
+
+.beauty h1{
+    text-align: center;
+    margin-bottom: 50px;
+    background: tomato;
+    font-style: italic;
+    font-weight: 700;
+    color: white;
+    border-radius: 5px;
+}
+.nice{
+    background: rgb(201, 226, 235);
+    padding: 5px;
+    margin: 0 5px;
+    color: tomato;
+    font-style: italic;
+}
+.lovely{
+    background: rgb(182, 179, 179);
+    padding: 5px;
+    margin: 0 5px;
+    color: black;
+    font-style: italic;
+}
+.ok{
+    box-shadow: 0px 0px 10px black;
+    padding: 50px;
+    margin: 20px 0;
+    border-radius: 10px;
+}

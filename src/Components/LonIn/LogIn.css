@@ -1,0 +1,8 @@
+.modify{
+    width: 500px;
+    border: 2px solid blue;
+    padding: 10px;
+}
+.modify input{
+    width: 100%;
+}

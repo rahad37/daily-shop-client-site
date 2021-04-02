@@ -1,0 +1,27 @@
+.design{
+    padding: 10px;
+}
+.design ul{
+    line-height: 50px;
+}
+.design ul li{
+    display: inline-block;
+}
+.design ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 15px;
+    color: tomato;
+    font-size: 18px;
+    font-weight: 700;
+    transition: .5s;
+}
+.design ul li a:hover{
+    color: blue;
+}
+.design h1{
+    text-transform: uppercase;
+    color: tomato;
+    font-style: italic;
+    font-weight: 700;
+}
