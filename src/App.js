@@ -17,6 +17,7 @@ import ManageProduct from './Components/ManageProduct/ManageProduct';
 import EditProduct from './Components/EditProduct/EditProduct';
 import { Checkbox } from '@material-ui/core';
 import CheckOut from './Components/CheckOut/CheckOut';
+import DataLoading from './Components/DataLoading/DataLoading';
 
 export const UserContext = createContext();
 
@@ -42,6 +43,9 @@ function App(props) {
         </Route>
         <Route path="/login">
           <LogIn/>
+        </Route>
+        <Route path='/dataLoad'>
+          <DataLoading/>
         </Route>
         <PrivateRoute path="/addProducts">
           <AddProducts/>

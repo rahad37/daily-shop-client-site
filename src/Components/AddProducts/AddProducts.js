@@ -5,6 +5,7 @@ import './AddProducts.css';
 import AddIcon from '@material-ui/icons/Add';
 import AppsIcon from '@material-ui/icons/Apps';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
+import { Link } from 'react-router-dom';
 
 const AddProducts = () => {
     const { register, handleSubmit, watch, errors } = useForm();
@@ -45,11 +46,14 @@ const AddProducts = () => {
         });
   }
     return (
-      <div className='d-flex justify-content-between art'>
+      <div className='change'>
+      <h2>Add Product...</h2>
+      <div className='d-flex justify-content-between mt-5 art'>
         <div className="sizing">
-        <h5><AddIcon></AddIcon> Add Product</h5>
-            <h5><AppsIcon></AppsIcon> Product Manage</h5>
-            <h5><BorderColorIcon></BorderColorIcon> Product Edit</h5>
+          <Link to='/addProducts'><h5><AddIcon></AddIcon> Add Product</h5></Link>
+          <Link to='/dataLoad'><h5><AppsIcon></AppsIcon> Product Manage</h5></Link>
+          <Link to='/edit'><h5><BorderColorIcon></BorderColorIcon> Product Edit</h5></Link>
+                       
         </div>
         <form className='love' onSubmit={handleSubmit(onSubmit)}>
           <input name="name" placeholder='Product Name' ref={register} /><br></br><br></br>
@@ -58,7 +62,7 @@ const AddProducts = () => {
           {errors.exampleRequired && <span>This field is required</span>}
           <input type="submit" />
         </form>
-
+      </div>
       </div>
     );  
 };

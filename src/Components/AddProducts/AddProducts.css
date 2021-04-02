@@ -6,6 +6,23 @@
 .love input{
     width: 100%;
 }
+.sizing h5{
+   background: lightblue;
+   cursor: pointer;
+   padding: 10px 50px;
+   border-radius: 10px;
+}
+.sizing h5:hover{
+    color: black;
+}
+.change h2{
+    background: black;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 10px;
+}
 .sizing{
-   
+    text-decoration: none;
 }
