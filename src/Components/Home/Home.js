@@ -1,3 +1,4 @@
+import { CircularProgress } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import Order from '../Order/Order';
 import Product from '../Product/Product';
@@ -12,6 +13,9 @@ const Home = () => {
    }, [])
     return (
         <div className='row'>
+            {
+                products.length === 0 && <CircularProgress style={{ margin: '0 auto'}}/>
+            }
             {
                 products.map(product => <Product product={product}></Product>)
             }

@@ -98,18 +98,18 @@ const LogIn = () => {
     }
     return (
         <div>
-            <form className='modify' onSubmit={handleSubmit}>
+            <form className='modify mb-2' onSubmit={handleSubmit}>
                 {newUser && <input type='text' name='name' onBlur={handleBlur} placeholder='Your Full Name' required/>}<br></br><br></br>
                 <input type='email' name='email' onBlur={handleBlur} placeholder='Your Email Address' required></input><br></br><br></br>
                 <input type='password' name='password' onBlur={handleBlur} placeholder='Password (Minimum 7 Digits)' required></input><br></br><br></br>
                 {newUser && <input type='password' name='password' onBlur={handleBlur} placeholder='Confirm Password' required></input>}<br></br><br></br>
                 <input type='submit' value={newUser ? 'Sign Up' : 'Log In'}></input>              
             </form>
-            <div className='d-flex justify-content-start'>
+            <div className='d-flex justify-content-center' style={{fontSize: '20px', fontWeight: '700'}}>
                 <p style={{marginRight: '10px'}}>Already have an account? Or</p>
                 <div>
                 <input style={{marginRight: '5px'}} type='checkbox' onChange={()=>setNewUser(!newUser)}name='newUser' id=''/>
-                <label htmlFor='newUser'>New User Sign Up</label>
+                <label htmlFor='newUser'> Sign Up</label>
                 <h4 style={{color: 'red'}}>{user.error}</h4>
                 {user.success && <h4 style={{color: 'green'}}>User { newUser ? 'Created' : 'Logged In' } Successfully</h4>}
                 </div>

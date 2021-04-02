@@ -18,10 +18,7 @@ const CheckOut = () => {
   },[])
   const item = orders.find(item => item?._id === _id)
 
-  const handleOrder =()=>{
-   const newOrder = {...loggedInUser};
-   
-  }
+ 
     return (
         <div className='beauty'>
         <h1>CheckOut</h1>
@@ -39,7 +36,7 @@ const CheckOut = () => {
         </div>
         
         <Link to='/order'>
-            <button className='bg-danger' onClick={handleOrder}>CheckOut</button>
+            <button className='bg-danger'>CheckOut</button>
         </Link>
     </div>
     );

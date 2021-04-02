@@ -1,8 +1,12 @@
 .modify{
-    width: 500px;
-    border: 2px solid blue;
-    padding: 10px;
+    width: 700px;
+    box-shadow: 0px 0px 10px blue;
+    padding: 30px;
+    margin: 0 auto;
+    border-radius: 10px;
+
 }
 .modify input{
     width: 100%;
+    padding: 5px;
 }
