@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
-import './AddProducts.css'
+import './AddProducts.css';
+import AddIcon from '@material-ui/icons/Add';
+import AppsIcon from '@material-ui/icons/Apps';
+import BorderColorIcon from '@material-ui/icons/BorderColor';
 
 const AddProducts = () => {
     const { register, handleSubmit, watch, errors } = useForm();
@@ -13,7 +15,7 @@ const AddProducts = () => {
         price: data.price,
         imageURL: imageURL
       }
-      const url = `http://localhost:5001/addProduct`
+      const url = `https://murmuring-fortress-97245.herokuapp.com/addProduct`
 
         fetch(url,{
             method: 'POST',
@@ -44,20 +46,15 @@ const AddProducts = () => {
   }
     return (
       <div className='d-flex justify-content-between art'>
-        <div className="">
-            <ul className="text-decoration-none">
-                {/* <Link to='/addProduct'><li>Add Product</li></Link>
-                <Link to='/manage'><li>Manage Product</li></Link>
-                <Link to='/edit'><li>Edit Product</li></Link> */}
-                <li>Add Product</li>
-                <li>Manage Product</li>
-                <li>Edit Product</li>
-            </ul>
+        <div className="sizing">
+        <h5><AddIcon></AddIcon> Add Product</h5>
+            <h5><AppsIcon></AppsIcon> Product Manage</h5>
+            <h5><BorderColorIcon></BorderColorIcon> Product Edit</h5>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input name="name" defaultValue="New Product" ref={register} /><br></br>
-          <input name="price" defaultValue="Product Price" ref={register} /><br></br>
-          <input name="exampleRequired" type='file' onChange={handleImageUpload} /><br></br>
+        <form className='love' onSubmit={handleSubmit(onSubmit)}>
+          <input name="name" placeholder='Product Name' ref={register} /><br></br><br></br>
+          <input name="price" placeholder='Product Price' ref={register} /><br></br><br></br>
+          <input name="exampleRequired" type='file' onChange={handleImageUpload} /><br></br><br></br>
           {errors.exampleRequired && <span>This field is required</span>}
           <input type="submit" />
         </form>

@@ -22,7 +22,7 @@ const Header = () => {
                 <Link to="/addProducts">Admin</Link>
                 </li>
                 <li>
-                <a href='/home' style={{color: 'white', background: 'black', padding: '5px', borderRadius: '5px'}}>Sign Out</a>
+                <a href='/home' style={{color: 'white', background: 'black', padding: '5px', borderRadius: '5px'}}>Log Out</a>
                 </li>
             </ul>
         </div>

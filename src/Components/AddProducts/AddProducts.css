@@ -1,12 +1,11 @@
-.art{
-    /* background: black; */
+.love{
+    box-shadow: 0px 0px 10px blue;
+    padding: 50px 100px;
+    border-radius: 10px;
 }
-.art ul{
-    text-decoration: none;
+.love input{
+    width: 100%;
 }
-.art ul li{
-    /* text-decoration: none; */
-}
-.art ul li a{
-    color: white;
+.sizing{
+   
 }

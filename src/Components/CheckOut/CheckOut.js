@@ -12,7 +12,7 @@ const CheckOut = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [orders, setOrders] = useState([])
   useEffect(()=>{
-    fetch('http://localhost:5001/products')
+    fetch('https://murmuring-fortress-97245.herokuapp.com/products')
     .then(res => res.json())
     .then(data => setOrders(data))
   },[])
@@ -32,9 +32,9 @@ const CheckOut = () => {
               <h2>Price</h2>
           </div>
           <div className='d-flex justify-content-between rounded lovely mt-3'>
-              <h3 className='pl-2'>{item?.name}</h3>
-              <h3>1</h3>
-              <h3 className='pr-4'>{item?.price}</h3>
+              <h5 className='pl-2'>{item?.name}</h5>
+              <h5>1</h5>
+              <h5 className='pr-4'>{item?.price}</h5>
           </div>
         </div>
         
