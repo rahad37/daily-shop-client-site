@@ -5,7 +5,7 @@ Everything is working in my localhost perfectly but after deploying in Firebase 
 This is an Online Grocery products Web-site. The web-site is built by Javascript Programming Language.
 
 ## Live Link...
-https://murmuring-fortress-97245.herokuapp.com
+https://daily-shop-37a6f.web.app
 
 ## Developed And Designed by....
 Rahad_Ahmed  (The Cool dude)
