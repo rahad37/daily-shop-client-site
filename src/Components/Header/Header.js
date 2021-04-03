@@ -6,7 +6,7 @@ import './Header.css'
 const Header = () => {
     return (
         <Container>
-        <div className="d-flex justify-content-between design mt-3 mb-5 rounded">
+        <div className="d-flex justify-content-between design mt-2 mb-2 rounded">
             <h1>Daily Shop</h1>
             <ul>
                 <li>

@@ -10,3 +10,16 @@
     width: 100%;
     padding: 5px;
 }
+.knock{
+    width: 650px;
+    margin: 0 auto;
+}
+.knock button{
+    width: 100%;
+    font-weight: 700;
+    border-radius: 5px;
+}
+.knock img{
+    width: 50px;
+    margin-right: 10px;
+}

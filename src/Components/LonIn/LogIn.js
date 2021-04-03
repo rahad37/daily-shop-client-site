@@ -5,6 +5,7 @@ import firebaseConfig from './firebase.config';
 import './LogIn.css';
 import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../../App';
+import Google from '../../images/google.jpg';
 
 
 
@@ -18,6 +19,7 @@ const LogIn = () => {
     const history = useHistory();
     const location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     const [newUser, setNewUser] = useState(false);
     const [user, setUser] = useState({
@@ -25,9 +27,8 @@ const LogIn = () => {
         email: '',
         error: '',
         password: '',
-        success: false
+        success: false,
     });
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
 
     const handleBlur= (event) => {
@@ -72,7 +73,6 @@ const LogIn = () => {
             setUser(newUserInfo);
             setLoggedInUser(newUserInfo);
             history.replace(from);
-            console.log('sign in user info', res.user);
         })
         .catch((error) => {
             const newUserInfo = {...user};
@@ -96,6 +96,29 @@ const LogIn = () => {
             console.log(error)
         });
     }
+
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const googleSignIn = () =>{
+    firebase.auth()
+    .signInWithPopup(provider).then(res => {
+
+    const {displayName, email} = res.user;
+    const signedInUser = {name: displayName, email}
+    const newUserInfo = {...user};
+    newUserInfo.error = '';
+    newUserInfo.success = true;
+    setUser(signedInUser);
+    setLoggedInUser(signedInUser);
+    history.replace(from);
+
+  }).catch((error) => {
+    const newUserInfo = {...user};
+    newUserInfo.error = error.message;
+    newUserInfo.success = false;
+    newUserInfo.signInGoogle = false;
+    setUser(newUserInfo);
+  });
+    }
     return (
         <div>
             <form className='modify mb-2' onSubmit={handleSubmit}>
@@ -103,7 +126,8 @@ const LogIn = () => {
                 <input type='email' name='email' onBlur={handleBlur} placeholder='Your Email Address' required></input><br></br><br></br>
                 <input type='password' name='password' onBlur={handleBlur} placeholder='Password (Minimum 7 Digits)' required></input><br></br><br></br>
                 {newUser && <input type='password' name='password' onBlur={handleBlur} placeholder='Confirm Password' required></input>}<br></br><br></br>
-                <input type='submit' value={newUser ? 'Sign Up' : 'Log In'}></input>              
+                <input type='submit' value={newUser ? 'Sign Up' : 'Log In'}></input>
+                       
             </form>
             <div className='d-flex justify-content-center' style={{fontSize: '20px', fontWeight: '700'}}>
                 <p style={{marginRight: '10px'}}>Already have an account? Or</p>
@@ -114,6 +138,11 @@ const LogIn = () => {
                 {user.success && <h4 style={{color: 'green'}}>User { newUser ? 'Created' : 'Logged In' } Successfully</h4>}
                 </div>
             </div>
+            <div className='knock'>               
+                <button onClick={googleSignIn}><img src={Google} alt=''/>Sign In With Google</button>
+              
+            </div>
+              
         </div>
     );
 };

@@ -45,6 +45,10 @@ const AddProducts = () => {
           console.log(error);
         });
   }
+
+  const handleProductSubmit = () => {
+    alert('Your Product is added Successfully')
+  }
     return (
       <div className='change'>
       <h2>Add Product...</h2>
@@ -56,11 +60,11 @@ const AddProducts = () => {
                        
         </div>
         <form className='love' onSubmit={handleSubmit(onSubmit)}>
-          <input name="name" placeholder='Product Name' ref={register} /><br></br><br></br>
-          <input name="price" placeholder='Product Price' ref={register} /><br></br><br></br>
+          <input name="name" placeholder='Product Name' ref={register} required/><br></br><br></br>
+          <input name="price" placeholder='Product Price' ref={register} required/><br></br><br></br>
           <input name="exampleRequired" type='file' onChange={handleImageUpload} /><br></br><br></br>
           {errors.exampleRequired && <span>This field is required</span>}
-          <input type="submit" />
+          <input onClick={handleProductSubmit} type="submit" Value='Submit' />
         </form>
       </div>
       </div>

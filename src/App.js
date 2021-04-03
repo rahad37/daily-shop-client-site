@@ -28,6 +28,7 @@ function App(props) {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
       <Header></Header>
+      <h2 className='App'>{loggedInUser.email}</h2>
       <Switch>
         <Route exact path="/">
           <Home/>

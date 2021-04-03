@@ -30,14 +30,11 @@ const CheckOut = () => {
           </div>
           <div className='d-flex justify-content-between rounded lovely mt-3'>
               <h5 className='pl-2'>{item?.name}</h5>
-              <h5>1</h5>
-              <h5 className='pr-4'>{item?.price}</h5>
+              <h5 className='pl-5'>1</h5>
+              <h5 className='pr-4'>${item?.price}</h5>
           </div>
         </div>
-        
-        <Link to='/order'>
-            <button className='bg-danger'>CheckOut</button>
-        </Link>
+            <button className='bg-danger' >CheckOut</button>       
     </div>
     );
 };
