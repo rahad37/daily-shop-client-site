@@ -13,28 +13,22 @@ import { Container } from 'react-bootstrap';
 import Order from './Components/Order/Order';
 import { createContext, useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import ManageProduct from './Components/ManageProduct/ManageProduct';
 import EditProduct from './Components/EditProduct/EditProduct';
-import { Checkbox } from '@material-ui/core';
 import CheckOut from './Components/CheckOut/CheckOut';
-import DataLoading from './Components/DataLoading/DataLoading';
 
 export const UserContext = createContext();
 
-function App(props) {
+function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <Container>
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
       <Header></Header>
-      <h2 className='App'>{loggedInUser.email}</h2>
+      <h2>{loggedInUser.email}</h2>
       <Switch>
         <Route exact path="/">
           <Home/>
-        </Route>
-        <Route path='/manage'>
-          <ManageProduct/>
         </Route>
         <Route path='/edit'>
           <EditProduct/>
@@ -44,9 +38,6 @@ function App(props) {
         </Route>
         <Route path="/login">
           <LogIn/>
-        </Route>
-        <Route path='/dataLoad'>
-          <DataLoading/>
         </Route>
         <PrivateRoute path="/addProducts">
           <AddProducts/>

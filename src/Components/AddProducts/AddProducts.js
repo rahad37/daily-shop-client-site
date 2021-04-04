@@ -55,7 +55,7 @@ const AddProducts = () => {
       <div className='d-flex justify-content-between mt-3 art'>
         <div className="sizing">
           <Link to='/addProducts'><h5><AddIcon></AddIcon> Add Product</h5></Link>
-          <Link to='/dataLoad'><h5><AppsIcon></AppsIcon> Product Manage</h5></Link>
+          <Link to='/order'><h5><AppsIcon></AppsIcon> Product Manage</h5></Link>
           <Link to='/edit'><h5><BorderColorIcon></BorderColorIcon> Product Edit</h5></Link>
                        
         </div>

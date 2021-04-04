@@ -1,6 +1,5 @@
 import { CircularProgress } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
-import Order from '../Order/Order';
 import Product from '../Product/Product';
 
 

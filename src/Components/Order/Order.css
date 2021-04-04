@@ -7,3 +7,27 @@
     font-weight: 700;
     padding: 5px;
 }
+.omg ul li{
+    background: lightgray;
+    margin: 5px 0;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+}
+
+.omg ul strong{
+    font-size: 25px;
+    margin-left: 20px;
+}
+.omg ul span{
+    font-size: 22px;
+    margin-left: 20px;
+    color: rgb(252, 8, 8);
+}
+.omg .side{
+    margin-left: 80px;
+}
+.omg .pp{
+    float: right; 
+}

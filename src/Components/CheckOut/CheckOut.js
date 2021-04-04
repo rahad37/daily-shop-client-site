@@ -18,6 +18,24 @@ const CheckOut = () => {
   },[])
   const item = orders.find(item => item?._id === _id)
 
+  const handleCheckout = () => {
+    const buyDetails = {...loggedInUser, order: item, date: new Date()};
+    fetch('http://localhost:5001/addOrder', {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(buyDetails)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data){
+        alert('Your Order is placed Successfully. Go To Orders Page to See Your ordered Products... Thank You!!');
+      }
+    })
+
+
+  }
  
     return (
         <div className='beauty'>
@@ -34,7 +52,7 @@ const CheckOut = () => {
               <h5 className='pr-4'>${item?.price}</h5>
           </div>
         </div>
-            <button className='bg-danger' >CheckOut</button>       
+            <button className='bg-danger' onClick={handleCheckout}>CheckOut</button>       
     </div>
     );
 };

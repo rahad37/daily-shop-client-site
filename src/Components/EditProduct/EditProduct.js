@@ -3,7 +3,7 @@ import React from 'react';
 const EditProduct = () => {
     return (
         <div>
-            <h1>This is the Edit page....</h1>
+            <h1 style={{fontStyle: 'italic', color: 'blue'}}>Thank You To Visit the Page. This page will be designed soon...</h1>
         </div>
     );
 };
