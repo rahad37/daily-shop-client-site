@@ -10,7 +10,7 @@ const Order = () => {
   const [buys, setBuys] = useState([]);
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   useEffect(()=>{
-    fetch('https://calm-lowlands-46734.herokuapp.com/allOrder?email='+loggedInUser.email)
+    fetch('https://calm-lowlands-46734.herokuapp.com/allOrder')
     .then(res => res.json())
     .then(data => setBuys(data))
   },[])
