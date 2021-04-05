@@ -9,7 +9,7 @@ import './Order.css';
 const Order = () => {
   const [buys, setBuys] = useState([]);
   useEffect(()=>{
-    fetch('https://murmuring-fortress-97245.herokuapp.com/allOrder')
+    fetch('https://calm-lowlands-46734.herokuapp.com/allOrder')
     .then(res => res.json())
     .then(data => setBuys(data))
   },[])

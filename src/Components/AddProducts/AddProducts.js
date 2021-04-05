@@ -16,7 +16,7 @@ const AddProducts = () => {
         price: data.price,
         imageURL: imageURL
       }
-      const url = `https://murmuring-fortress-97245.herokuapp.com/addProduct`
+      const url = `https://calm-lowlands-46734.herokuapp.com/addProduct`
 
         fetch(url,{
             method: 'POST',

@@ -6,9 +6,10 @@ import Product from '../Product/Product';
 const Home = () => {
    const [products, setProducts] = useState([]);
    useEffect(()=>{
-    fetch('https://murmuring-fortress-97245.herokuapp.com/products')
+    fetch('https://calm-lowlands-46734.herokuapp.com/products')
     .then(res => res.json())
     .then(data => setProducts(data))
+   
    }, [])
     return (
         <div className='row'>

@@ -11,7 +11,7 @@ const CheckOut = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [orders, setOrders] = useState([])
   useEffect(()=>{
-    fetch('https://murmuring-fortress-97245.herokuapp.com/products')
+    fetch('https://calm-lowlands-46734.herokuapp.com/products')
     .then(res => res.json())
     .then(data => setOrders(data))
   },[])
@@ -20,7 +20,7 @@ const CheckOut = () => {
   const name = loggedInUser.name;
    const handleCheckout = () => {
      const buyDetails = {email, name, order: item, date: new Date()};
-     fetch('https://murmuring-fortress-97245.herokuapp.com/addOrder',{
+     fetch('https://calm-lowlands-46734.herokuapp.com/addOrder',{
      method: 'POST',
      headers: {"Content-Type" : "application/json"},
      body: JSON.stringify(buyDetails)
