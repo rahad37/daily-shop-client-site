@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import './CheckOut.css';
 
@@ -17,25 +16,23 @@ const CheckOut = () => {
     .then(data => setOrders(data))
   },[])
   const item = orders.find(item => item?._id === _id)
+  const email = loggedInUser.email;
+  const name = loggedInUser.name;
+   const handleCheckout = () => {
+     const buyDetails = {email, name, order: item, date: new Date()};
+     fetch('https://murmuring-fortress-97245.herokuapp.com/addOrder',{
+     method: 'POST',
+     headers: {"Content-Type" : "application/json"},
+     body: JSON.stringify(buyDetails)
+     })
+     .then(res => res.json())
+     .then(data => {
+     if(data){
+     alert('Your Order is placed Successfully. Go To Orders Page to See Your ordered Products... Thank You!!')
+     }
+     })
 
-  const handleCheckout = () => {
-    const buyDetails = {...loggedInUser, order: item, date: new Date()};
-    fetch('http://localhost:5001/addOrder', {
-      method: 'POST',
-      headers: {
-        'Content-Type' : 'application/json'
-      },
-      body: JSON.stringify(buyDetails)
-    })
-    .then(res => res.json())
-    .then(data => {
-      if(data){
-        alert('Your Order is placed Successfully. Go To Orders Page to See Your ordered Products... Thank You!!');
-      }
-    })
-
-
-  }
+ }
  
     return (
         <div className='beauty'>
