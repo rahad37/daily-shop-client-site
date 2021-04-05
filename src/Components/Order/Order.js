@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import ClearIcon from '@material-ui/icons/Clear';
 import EditIcon from '@material-ui/icons/Edit';
-
 import './Order.css';
+import { UserContext } from '../../App';
 
 const Order = () => {
   const [buys, setBuys] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   useEffect(()=>{
-    fetch('https://calm-lowlands-46734.herokuapp.com/allOrder')
+    fetch('https://calm-lowlands-46734.herokuapp.com/allOrder?email='+loggedInUser.email)
     .then(res => res.json())
     .then(data => setBuys(data))
   },[])
